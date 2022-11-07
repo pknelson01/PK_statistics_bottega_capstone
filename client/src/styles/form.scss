@@ -1,0 +1,74 @@
+// .formWrapper {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+
+//   .form {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+//     width: 80vw;
+//     justify-content: center;
+//     align-items: center;
+
+//     input {
+//       font-size: .9em;
+//       background-color: transparent;
+//       width: 95%;
+//       text-decoration: none;
+//       border: 2.5px solid $blue;
+//       text-align: center;
+//       color: $offWhite;
+
+//     }
+
+//     .btn {
+//       background-color: $blue;
+//       text-decoration: none;
+//       border: 2px solid $blue;
+//       font-size: 1.2em;
+//       border-radius: 13px;
+//     }
+//   }
+// }
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 30vw;
+    grid-gap: 20px;
+    justify-self: center;
+    align-self: center;
+
+    input {
+      border: 1px solid $blue;
+      width: 100%;
+      background-color: transparent;
+      font-size: 1.1em;
+      border-radius: 5px;
+      color: $babyBlue;
+    }
+
+
+    .btn {
+      background-color: $blue;
+      text-decoration: none;
+      border: 2px solid $blue;
+      font-size: 1.2em;
+      border-radius: 13px;
+
+    }
+  }
+}
+
+.newStatLine {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}

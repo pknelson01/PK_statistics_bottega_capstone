@@ -1,0 +1,52 @@
+  .media-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 23%;
+    padding: 0px 10px 10px 0;
+    color: $offWhite;
+    max-height: 350px;
+    text-align: center;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
+    .media-element {
+      display: grid;
+      grid-template-rows: min-content;
+      gap: 10px;
+      background-color: transparent;
+      border-radius: 5px;
+
+
+      img {
+        justify-self: center;
+        inline-size: 80%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 1em;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $offWhite;
+    border-radius: 100vw;
+    margin-block: .5em;
+    margin-inline: 20em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $black;
+    border: .15em solid;
+    border-radius: 100vw;
+
+    // &:hover {
+    //   background: $black;
+    //   border-radius: 100vw;
+
+    // }
+  }

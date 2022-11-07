@@ -1,0 +1,29 @@
+.StatsPage {
+  display: grid;
+  justify-content: center;
+
+
+  .date {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+  }
+
+  .Stats {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    width: 80vw;
+    // margin-bottom: 10px;
+
+    span {
+      font-size: 1.3em;
+      border: 2px solid $offWhite;
+      border-bottom: 2px solid $offWhite;
+      padding: 3px;
+    }
+
+  }
+}
