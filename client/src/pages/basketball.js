@@ -29,10 +29,7 @@ export default class BasketBall extends Component {
           <BasketballStats />
         </div>
 
-        <div className='newStatLine'>
-          <h4>ADD NEW</h4>
-        </div>
-        <BasketballForm />
+        {/* <BasketballForm /> */}
       </div >
     );
   }

@@ -23,11 +23,6 @@ export default class FootBall extends Component {
           </div>
           <FootballStats />
         </div>
-
-        <div className='newStatLine'>
-          <h4>ADD NEW</h4>
-        </div>
-        <FootballForm />
       </div >
     );
   }

@@ -7,11 +7,69 @@ export default class SoccerStats extends Component {
 
     this.getSoccerStat = this.getSoccerStat.bind(this);
     this.soccerStatDeletion = this.soccerStatDeletion.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+
 
     this.state = {
+      date_of_game: "",
+      minutes: "",
+      goals: "",
+      assists: "",
+      pks: "",
+      shots_on_goal: "",
+      goals_allowed: "",
+      yellow_cards: "",
+      red_cards: "",
+      url: "http://localhost:5000/api/soccer_stat",
+      action: "post",
       soccerStats: []
     }
   }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+      errorText: ""
+    });
+    console.log(this.state)
+  }
+
+  handleSubmit(event) {
+    axios.post("http://localhost:5000/api/soccer_stat",
+      {
+        date_of_game: this.state.date_of_game,
+        minutes: this.state.minutes,
+        goals: this.state.goals,
+        assists: this.state.assists,
+        pks: this.state.pks,
+        shots_on_goal: this.state.shots_on_goal,
+        goals_allowed: this.state.goals_allowed,
+        yellow_cards: this.state.yellow_cards,
+        red_cards: this.state.red_cards,
+      })
+      .then(response => {
+        this.setState({
+          date_of_game: "",
+          minutes: "",
+          goals: "",
+          assists: "",
+          pks: "",
+          shots_on_goal: "",
+          goals_allowed: "",
+          yellow_cards: "",
+          red_cards: "",
+          url: "http://localhost:5000/api/soccer_stat",
+          action: "post"
+        });
+        this.getSoccerStat()
+      })
+      .catch(error => {
+        console.log("soccerStat handleSubmit error", error);
+      });
+    event.preventDefault();
+  }
+
 
   soccerStatDeletion(soccer_stat) {
     axios.delete(`http://localhost:5000/api/soccer_stat/${soccer_stat.id}`)
@@ -48,10 +106,6 @@ export default class SoccerStats extends Component {
         {this.state.soccerStats.map((soccer_stat, index) => {
           return (
             <div className='StatsPage' key={index}>
-              {/* <div className='date'>
-                <span>Date: {stat.date_of_game}</span>
-              </div> */}
-
               <div className='Stats'>
                 <span>{soccer_stat.date_of_game}</span>
                 <span>{soccer_stat.minutes}</span>
@@ -68,8 +122,73 @@ export default class SoccerStats extends Component {
               </div>
             </div>
           )
-        })
-        }
+        })}
+
+        <div className='newStatLine'>
+          <h4>ADD NEW</h4>
+        </div>
+
+
+        <div className='formWrapper'>
+          <form onSubmit={this.handleSubmit} className="form">
+            <input
+              type="text"
+              name="date_of_game"
+              placeholder="Date"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="minutes"
+              placeholder="Minutes"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="goals"
+              placeholder="Goals"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="assists"
+              placeholder="Assists"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="pks"
+              placeholder="PKs"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="shots_on_goal"
+              placeholder="S.O.G"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="goals_allowed"
+              placeholder="G.A"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="yellow_cards"
+              placeholder="Yellow Cards"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="red_cards"
+              placeholder="Red Cards"
+              onChange={this.handleChange}
+            />
+            <button className="btn" type="submit">Save</button>
+          </form>
+        </div>
+
       </div >
     );
   }

@@ -24,11 +24,6 @@ export default class Soccer extends Component {
 
           <SoccerStats />
         </div>
-
-        <div className='newStatLine'>
-          <h4>ADD NEW</h4>
-        </div>
-        <SoccerForm />
       </div >
     );
   }
