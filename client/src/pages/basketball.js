@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BasketballStats from '../components/basketball-stats';
 import BasketballForm from '../forms/basketball-form';
-import axios from 'axios';
 
 export default class BasketBall extends Component {
   constructor(props) {

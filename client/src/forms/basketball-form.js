@@ -59,6 +59,7 @@ export default class BasketballForm extends Component {
           action: "POST"
         });
         console.log('handleSubmit response: ', response)
+        this.props.getBasketballStat();
       })
       .catch(error => {
         console.log("BasketballStat handleSubmit error", error);

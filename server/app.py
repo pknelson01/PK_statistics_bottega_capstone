@@ -41,7 +41,7 @@ class Basketball_stat(db.Model):
 
 class Basketball_statSchema(ma.Schema):
   class Meta:
-    fields = ('date_of_game', 'points', 'assists', 'rebounds', 'steals', 'blocks', 'turn_overs', 'fouls', 'minutes')
+    fields = ('id', 'date_of_game', 'points', 'assists', 'rebounds', 'steals', 'blocks', 'turn_overs', 'fouls', 'minutes')
 
 basketball_stat_schema = Basketball_statSchema()
 basketball_stats_schema = Basketball_statSchema(many=True)
@@ -72,7 +72,7 @@ class Football_stat(db.Model):
 
 class Football_statSchema(ma.Schema):
   class Meta:
-    fields = ('date_of_game', 'touchdowns', 'receiving_yards', 'rushing_yards', 'tackles', 'completions', 'interceptions', 'sacks', 'passing_yards')
+    fields = ('id', 'date_of_game', 'touchdowns', 'receiving_yards', 'rushing_yards', 'tackles', 'completions', 'interceptions', 'sacks', 'passing_yards')
 
 football_stat_schema = Football_statSchema()
 football_stats_schema = Football_statSchema(many=True)
@@ -103,7 +103,7 @@ class Soccer_stat(db.Model):
 
 class Soccer_statSchema(ma.Schema):
   class Meta:
-    fields = ('date_of_game', 'goals', 'assists', 'pks', 'shots_on_goal', 'yellow_cards', 'red_cards', 'goals_allowed', 'minutes')
+    fields = ('id', 'date_of_game', 'goals', 'assists', 'pks', 'shots_on_goal', 'yellow_cards', 'red_cards', 'goals_allowed', 'minutes')
 
 soccer_stat_schema = Soccer_statSchema()
 soccer_stats_schema = Soccer_statSchema(many=True)

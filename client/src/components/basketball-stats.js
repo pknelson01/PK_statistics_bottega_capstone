@@ -14,7 +14,14 @@ export default class BasketballStats extends Component {
   }
 
   basketBallStatDeletion(basketball_stat) {
-    console.log("basketBallStatDeletion", basketball_stat)
+    axios.delete(`http://localhost:5000/api/basketball_stat/${basketball_stat.id}`)
+      .then(response => {
+        console.log(response)
+        this.getBasketballStat();
+      })
+      .catch(error => {
+        console.log("basketBallStatDeletion error: ", error)
+      })
   }
 
   getBasketballStat() {
@@ -51,7 +58,8 @@ export default class BasketballStats extends Component {
                 <span>{basketball_stat.blocks}</span>
                 <span>{basketball_stat.fouls}</span>
                 <span>{basketball_stat.turn_overs}</span>
-                <a onClick={this.basketBallStatDeletion(basketball_stat)}>Delete</a>
+                <button onClick={() => this.basketBallStatDeletion(basketball_stat)}
+                >Delete</button>
               </div>
             </div>
           )
