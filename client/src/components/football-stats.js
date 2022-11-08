@@ -6,10 +6,22 @@ export default class FootballStats extends Component {
     super(props)
 
     this.getFootballStat = this.getFootballStat.bind(this);
+    this.FootBallStatDeletion = this.FootBallStatDeletion.bind(this);
 
     this.state = {
       footballStats: []
     }
+  }
+
+  FootBallStatDeletion(football_stat) {
+    axios.delete(`http://localhost:5000/api/football_stat/${football_stat.id}`)
+      .then(response => {
+        console.log('stat deleted: ', response)
+        this.getFootballStat();
+      })
+      .catch(error => {
+        console.log("FootBallStatDeletion error: ", error)
+      })
   }
 
   getFootballStat() {
@@ -32,24 +44,21 @@ export default class FootballStats extends Component {
   render() {
     return (
       <div style={{ "color": "white" }}>
-        {this.state.footballStats.map((stat) => {
+        {this.state.footballStats.map((football_stat, index) => {
           return (
-            <div className='StatsPage'>
-              {/* <div className='date'>
-                <span>Date: {stat.date_of_game}</span>
-              </div> */}
-
+            <div className='StatsPage' key={index}>
               <div className='Stats'>
-                <span>{stat.date_of_game}</span>
-                <span>{stat.touchdowns}</span>
-                <span>{stat.receiving_yards}</span>
-                <span>{stat.rushing_yards}</span>
-                <span>{stat.passing_yards}</span>
-                <span>{stat.completions}</span>
-                <span>{stat.sacks}</span>
-                <span>{stat.tackles}</span>
-                <span>{stat.interceptions}</span>
-
+                <span>{football_stat.date_of_game}</span>
+                <span>{football_stat.touchdowns}</span>
+                <span>{football_stat.receiving_yards}</span>
+                <span>{football_stat.rushing_yards}</span>
+                <span>{football_stat.passing_yards}</span>
+                <span>{football_stat.completions}</span>
+                <span>{football_stat.sacks}</span>
+                <span>{football_stat.tackles}</span>
+                <span>{football_stat.interceptions}</span>
+                <button onClick={() => this.FootBallStatDeletion(football_stat)}
+                >Delete</button>
               </div>
             </div>
           )

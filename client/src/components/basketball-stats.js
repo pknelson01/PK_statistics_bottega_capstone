@@ -16,7 +16,7 @@ export default class BasketballStats extends Component {
   basketBallStatDeletion(basketball_stat) {
     axios.delete(`http://localhost:5000/api/basketball_stat/${basketball_stat.id}`)
       .then(response => {
-        console.log(response)
+        console.log('stat deleted: ', response)
         this.getBasketballStat();
       })
       .catch(error => {

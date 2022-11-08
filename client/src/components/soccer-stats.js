@@ -6,11 +6,24 @@ export default class SoccerStats extends Component {
     super(props)
 
     this.getSoccerStat = this.getSoccerStat.bind(this);
+    this.soccerStatDeletion = this.soccerStatDeletion.bind(this);
 
     this.state = {
       soccerStats: []
     }
   }
+
+  soccerStatDeletion(soccer_stat) {
+    axios.delete(`http://localhost:5000/api/soccer_stat/${soccer_stat.id}`)
+      .then(response => {
+        console.log('stat deleted: ', response)
+        this.getSoccerStat();
+      })
+      .catch(error => {
+        console.log("FootBallStatDeletion error: ", error)
+      })
+  }
+
 
   getSoccerStat() {
     axios.get("http://localhost:5000/api/soccer_stats")
@@ -32,29 +45,32 @@ export default class SoccerStats extends Component {
   render() {
     return (
       <div style={{ "color": "white" }}>
-        {this.state.soccerStats.map((stat) => {
+        {this.state.soccerStats.map((soccer_stat, index) => {
           return (
-            <div className='StatsPage'>
+            <div className='StatsPage' key={index}>
               {/* <div className='date'>
                 <span>Date: {stat.date_of_game}</span>
               </div> */}
 
               <div className='Stats'>
-                <span>{stat.date_of_game}</span>
-                <span>{stat.minutes}</span>
-                <span>{stat.goals}</span>
-                <span>{stat.assists}</span>
-                <span>{stat.pks}</span>
-                <span>{stat.shots_on_goal}</span>
-                <span>{stat.goals_allowed}</span>
-                <span>{stat.yellow_cards}</span>
-                <span>{stat.red_cards}</span>
+                <span>{soccer_stat.date_of_game}</span>
+                <span>{soccer_stat.minutes}</span>
+                <span>{soccer_stat.goals}</span>
+                <span>{soccer_stat.assists}</span>
+                <span>{soccer_stat.pks}</span>
+                <span>{soccer_stat.shots_on_goal}</span>
+                <span>{soccer_stat.goals_allowed}</span>
+                <span>{soccer_stat.yellow_cards}</span>
+                <span>{soccer_stat.red_cards}</span>
+                <button onClick={() => this.soccerStatDeletion(soccer_stat)}
+                >Delete</button>
 
               </div>
             </div>
           )
-        })}
-      </div>
+        })
+        }
+      </div >
     );
   }
 };
