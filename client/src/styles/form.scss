@@ -6,21 +6,21 @@
 
 //   .form {
 //     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-//     width: 80vw;
-//     justify-content: center;
-//     align-items: center;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     width: 30vw;
+//     grid-gap: 20px;
+//     justify-self: center;
+//     align-self: center;
 
 //     input {
-//       font-size: .9em;
+//       border: 1px solid $blue;
+//       width: 100%;
 //       background-color: transparent;
-//       width: 95%;
-//       text-decoration: none;
-//       border: 2.5px solid $blue;
-//       text-align: center;
-//       color: $offWhite;
-
+//       font-size: 1.1em;
+//       border-radius: 5px;
+//       color: $babyBlue;
 //     }
+
 
 //     .btn {
 //       background-color: $blue;
@@ -32,37 +32,41 @@
 //   }
 // }
 
+// .newStatLine {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 35px;
+// }
+
 .formWrapper {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  width: 80vw;
 
   .form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 30vw;
-    grid-gap: 20px;
-    justify-self: center;
-    align-self: center;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr.5fr;
 
     input {
-      border: 1px solid $blue;
+      display: flex;
+      text-decoration: none;
+      text-align: center;
+      border: 2px solid $offWhite;
       width: 100%;
       background-color: transparent;
-      font-size: 1.1em;
-      border-radius: 5px;
-      color: $babyBlue;
     }
 
 
     .btn {
-      background-color: $blue;
       text-decoration: none;
-      border: 2px solid $blue;
-      font-size: 1.2em;
-      border-radius: 13px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      font-size: 1.5em;
+      color: $babyBlue;
+      transition: .5s ease-in-out;
 
+      &:hover {
+        color: $blue;
+      }
     }
   }
 }

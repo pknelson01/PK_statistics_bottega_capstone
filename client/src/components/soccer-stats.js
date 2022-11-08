@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export default class SoccerStats extends Component {
   constructor(props) {
@@ -32,7 +34,6 @@ export default class SoccerStats extends Component {
       [event.target.name]: event.target.value,
       errorText: ""
     });
-    console.log(this.state)
   }
 
   handleSubmit(event) {
@@ -116,9 +117,10 @@ export default class SoccerStats extends Component {
                 <span>{soccer_stat.goals_allowed}</span>
                 <span>{soccer_stat.yellow_cards}</span>
                 <span>{soccer_stat.red_cards}</span>
-                <button onClick={() => this.soccerStatDeletion(soccer_stat)}
-                >Delete</button>
-
+                <button className='deleteButton' onClick={() => this.basketBallStatDeletion(soccer_stat)}
+                >
+                  <FontAwesomeIcon icon="square-minus" />
+                </button>
               </div>
             </div>
           )
@@ -135,57 +137,68 @@ export default class SoccerStats extends Component {
               type="text"
               name="date_of_game"
               placeholder="Date"
+              value={this.state.date_of_game}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="minutes"
               placeholder="Minutes"
+              value={this.state.minutes}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="goals"
               placeholder="Goals"
+              value={this.state.goals}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="assists"
               placeholder="Assists"
+              value={this.state.assists}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="pks"
               placeholder="PKs"
+              value={this.state.pks}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="shots_on_goal"
               placeholder="S.O.G"
+              value={this.state.shots_on_goal}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="goals_allowed"
               placeholder="G.A"
+              value={this.state.goals_allowed}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="yellow_cards"
               placeholder="Yellow Cards"
+              value={this.state.yellow_cards}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="red_cards"
               placeholder="Red Cards"
+              value={this.state.red_cards}
               onChange={this.handleChange}
             />
-            <button className="btn" type="submit">Save</button>
+            <button className="btn" type="submit">
+              <FontAwesomeIcon icon="square-check" />
+            </button>
           </form>
         </div>
 

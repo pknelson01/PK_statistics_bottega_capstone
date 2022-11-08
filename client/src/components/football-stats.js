@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class FootballStats extends Component {
   constructor(props) {
@@ -32,7 +33,6 @@ export default class FootballStats extends Component {
       [event.target.name]: event.target.value,
       errorText: ""
     });
-    console.log(this.state)
   }
   handleSubmit(event) {
     axios.post(
@@ -115,8 +115,10 @@ export default class FootballStats extends Component {
                 <span>{football_stat.sacks}</span>
                 <span>{football_stat.tackles}</span>
                 <span>{football_stat.interceptions}</span>
-                <button onClick={() => this.FootBallStatDeletion(football_stat)}
-                >Delete</button>
+                <button className='deleteButton' onClick={() => this.basketBallStatDeletion(football_stat)}
+                >
+                  <FontAwesomeIcon icon="square-minus" />
+                </button>
               </div>
             </div>
           )
@@ -133,54 +135,63 @@ export default class FootballStats extends Component {
               type="text"
               name="date_of_game"
               placeholder="Date"
+              value={this.state.date_of_game}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="touchdowns"
               placeholder="Touchdowns"
+              value={this.state.touchdowns}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="receiving_yards"
               placeholder="Rec.Yards"
+              value={this.state.receiving_yards}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="rushing_yards"
               placeholder="Rush.Yards"
+              value={this.state.rushing_yards}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="passing_yards"
               placeholder="Pass.Yards"
+              value={this.state.passing_yards}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="completions"
               placeholder="Completions"
+              value={this.state.completions}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="sacks"
               placeholder="Sacks"
+              value={this.state.sacks}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="tackles"
               placeholder="Tackles"
+              value={this.state.tackles}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="interceptions"
               placeholder="Interceptions"
+              value={this.state.interceptions}
               onChange={this.handleChange}
             />
             <button className="btn" type="submit">Save</button>

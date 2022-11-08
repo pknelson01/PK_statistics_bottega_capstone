@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class BasketballStats extends Component {
   constructor(props) {
@@ -31,7 +32,6 @@ export default class BasketballStats extends Component {
       [event.target.name]: event.target.value,
       errorText: ""
     });
-    console.log(this.state)
   }
 
 
@@ -118,8 +118,10 @@ export default class BasketballStats extends Component {
                 <span>{basketball_stat.blocks}</span>
                 <span>{basketball_stat.fouls}</span>
                 <span>{basketball_stat.turn_overs}</span>
-                <button onClick={() => this.basketBallStatDeletion(basketball_stat)}
-                >Delete</button>
+                <button className='deleteButton' onClick={() => this.basketBallStatDeletion(basketball_stat)}
+                >
+                  <FontAwesomeIcon icon="square-minus" />
+                </button>
               </div>
             </div>
           )
@@ -137,54 +139,63 @@ export default class BasketballStats extends Component {
               type="text"
               name="date_of_game"
               placeholder="Date"
+              value={this.state.date_of_game}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="minutes"
               placeholder="Minutes"
+              value={this.state.minutes}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="points"
               placeholder="Points"
+              value={this.state.points}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="assists"
               placeholder="Assists"
+              value={this.state.assists}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="rebounds"
               placeholder="Rebounds"
+              value={this.state.rebounds}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="steals"
               placeholder="Steals"
+              value={this.state.steals}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="blocks"
               placeholder="Blocks"
+              value={this.state.blocks}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="fouls"
               placeholder="Fouls"
+              value={this.state.fouls}
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="turn_overs"
               placeholder="Turn Overs"
+              value={this.state.turn_overs}
               onChange={this.handleChange}
             />
             <button className="btn" type="submit">Save</button>
@@ -194,73 +205,3 @@ export default class BasketballStats extends Component {
     );
   }
 };
-// import React, { Component } from 'react';
-// import axios from 'axios';
-
-// export default class BasketballStats extends Component {
-//   constructor(props) {
-//     super(props)
-
-//     this.getBasketballStat = this.getBasketballStat.bind(this);
-//     this.basketBallStatDeletion = this.basketBallStatDeletion.bind(this);
-
-//     this.state = {
-//       basketballStats: []
-//     }
-//   }
-
-//   basketBallStatDeletion(basketball_stat) {
-//     axios.delete(`http://localhost:5000/api/basketball_stat/${basketball_stat.id}`)
-//       .then(response => {
-//         console.log('stat deleted: ', response)
-//         this.getBasketballStat();
-//       })
-//       .catch(error => {
-//         console.log("basketBallStatDeletion error: ", error)
-//       })
-//   }
-
-//   getBasketballStat() {
-//     axios.get("http://localhost:5000/api/basketball_stats")
-//       .then(response => {
-//         this.setState({
-//           basketballStats: response.data
-//         })
-//         console.log('basketball stats: ', response.data)
-//       })
-//       .catch(error => {
-//         console.log("GetBasketballStat error:", error)
-//       })
-//   }
-
-//   componentDidMount() {
-//     this.getBasketballStat()
-//   }
-
-
-//   render() {
-//     return (
-//       <div style={{ "color": "white" }}>
-//         {this.state.basketballStats.map((basketball_stat, index) => {
-//           return (
-//             <div className='StatsPage' key={index}>
-//               <div className='Stats'>
-//                 <span>{basketball_stat.date_of_game}</span>
-//                 <span>{basketball_stat.minutes}</span>
-//                 <span>{basketball_stat.points}</span>
-//                 <span>{basketball_stat.assists}</span>
-//                 <span>{basketball_stat.rebounds}</span>
-//                 <span>{basketball_stat.steals}</span>
-//                 <span>{basketball_stat.blocks}</span>
-//                 <span>{basketball_stat.fouls}</span>
-//                 <span>{basketball_stat.turn_overs}</span>
-//                 <button onClick={() => this.basketBallStatDeletion(basketball_stat)}
-//                 >Delete</button>
-//               </div>
-//             </div>
-//           )
-//         })}
-//       </div>
-//     );
-//   }
-// };
