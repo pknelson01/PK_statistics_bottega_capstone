@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import BasketballOne from '../images/media-scroller-images/basketballOne.JPG';
 import BasketballTwo from '../images/media-scroller-images/basketballTwo.JPG';
-import BasketballThree from '../images/media-scroller-images/basketballThree.JPG';
 import BasketballFour from '../images/media-scroller-images/basketballFour.jpeg';
 import BasketballFive from '../images/media-scroller-images/basketballFive.jpeg';
-import FootballOne from '../images/media-scroller-images/footballOne.JPG';
-import FootballTwo from '../images/media-scroller-images/footballTwo.JPG';
-import FootballThree from '../images/media-scroller-images/footballThree.jpeg';
-import LeBron from '../images/lebron.jpg';
+import FootballFour from '../images/media-scroller-images/footballFour.JPG';
+import FootballSix from '../images/media-scroller-images/footballSix.JPG';
+import FootballSeven from '../images/media-scroller-images/footballSeven.JPG';
+import SoccerOne from '../images/media-scroller-images/soccerOne.JPG';
+import SoccerTwo from '../images/media-scroller-images/soccerTwo.JPG';
+import SoccerThree from '../images/media-scroller-images/soccerThree.JPG';
+import Field from '../images/hero-section-background.jpeg';
 
 export default class Home extends Component {
   constructor(props) {
@@ -17,56 +18,56 @@ export default class Home extends Component {
   render() {
     return (
       <div className='home-page'>
-        {/* <div className='greeting'>
-          <h1>ALL YOUR STATS AND SPORTS IN THE SAME PLACE</h1>
-        </div> */}
 
-        <div className='hero-section'>
+        {/* Have a welcome screen and below that will be a Carousel of cool images from each sport consider making it dynamic so the user can put his/her own pictures in there. */}
+
+        <div className='hero-section' style={{
+          backgroundImage: `url(${Field})`,
+        }}>
           <div className='text'>
             <h1>PK Statistics</h1>
             <h3>Start tracking today!</h3>
           </div>
-          <div className='image'>
-            <img src={LeBron}></img>
-          </div>
         </div>
-
-        {/* Have a welcome screen and below that will be a Carousel of cool images from each sport consider making it dynamic so the user can put his/her own pictures in there. */}
 
 
         <div>
           <div className='media-scroller'>
             <div className='media-element'>
-              <img src={BasketballOne}></img>
-              <p>Carlos Monroy || CVHS</p>
+              <img src={BasketballFour}></img>
+              <p>Parker Nelson || WHS</p>
             </div>
             <div className='media-element'>
-              <img src={FootballOne}></img>
+              <img src={FootballSeven}></img>
               <p>Jett Vance || WHS</p>
+            </div>
+            <div className='media-element'>
+              <img src={SoccerOne}></img>
+              <p>Zach Liffereth || SC</p>
             </div>
             <div className='media-element'>
               <img src={BasketballTwo}></img>
               <p>Kobe Shaw || WHS</p>
             </div>
             <div className='media-element'>
-              <img src={FootballTwo}></img>
-              <p>Jett Vance || WHS</p>
+              <img src={FootballFour}></img>
+              <p>Jace Hayes || TC</p>
             </div>
             <div className='media-element'>
-              <img src={BasketballThree}></img>
-              <p>Preston Bushman || The Final Four</p>
-            </div>
-            <div className='media-element'>
-              <img src={FootballThree}></img>
-              <p>Jett Vance || WHS</p>
-            </div>
-            <div className='media-element'>
-              <img src={BasketballFour}></img>
-              <p>Parker Nelson || WHS</p>
+              <img src={SoccerTwo}></img>
+              <p>Alex Fritcher || UVU</p>
             </div>
             <div className='media-element'>
               <img src={BasketballFive}></img>
-              <p>Parker Nelson || WHS</p>
+              <p>Parker Nelson & Kobe Shaw || WHS</p>
+            </div>
+            <div className='media-element'>
+              <img src={FootballSix}></img>
+              <p>Westlake HS</p>
+            </div>
+            <div className='media-element'>
+              <img src={SoccerThree}></img>
+              <p>Zach Liffereth || SC</p>
             </div>
           </div>
         </div>
