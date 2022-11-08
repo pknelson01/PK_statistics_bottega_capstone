@@ -44,15 +44,17 @@
 
   .form {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr.5fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .5fr;
+    grid-gap: 5px;
 
     input {
       display: flex;
       text-decoration: none;
       text-align: center;
-      border: 2px solid $offWhite;
+      border: 2px solid $blue;
       width: 100%;
       background-color: transparent;
+
     }
 
 

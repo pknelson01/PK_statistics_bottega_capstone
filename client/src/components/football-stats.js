@@ -194,7 +194,9 @@ export default class FootballStats extends Component {
               value={this.state.interceptions}
               onChange={this.handleChange}
             />
-            <button className="btn" type="submit">Save</button>
+            <button className="btn" type="submit">
+              <FontAwesomeIcon icon="square-check" />
+            </button>
           </form>
         </div>
 

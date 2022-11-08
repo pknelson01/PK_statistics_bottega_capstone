@@ -198,7 +198,9 @@ export default class BasketballStats extends Component {
               value={this.state.turn_overs}
               onChange={this.handleChange}
             />
-            <button className="btn" type="submit">Save</button>
+            <button className="btn" type="submit">
+              <FontAwesomeIcon icon="square-check" />
+            </button>
           </form>
         </div>
       </div>
