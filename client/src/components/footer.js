@@ -13,19 +13,28 @@ export default class Footer extends Component {
   }
   render() {
     return (
-      <div className='footer-wrapper'>
+      <div className='footer-wrapper' style={{
+      }} >
         <div className='top'>
           <span>More from this Developer:</span>
           <div className='portfolio-icon'>
-            <FontAwesomeIcon icon="user-tie" />
+            <a href='https://pen-react-portfolio.herokuapp.com/' target="_blank">
+              <FontAwesomeIcon icon="user-tie" className='user' />
+            </a>
           </div>
         </div>
         <div className='bottom'>
           <span>Connect with me!</span>
           <div className='socials'>
-            <FontAwesomeIcon icon={faLinkedin} className='linked-in' />
-            <FontAwesomeIcon icon={faSquareTwitter} className='twitter' />
-            <FontAwesomeIcon icon={faSquareGithub} className='github' />
+            <a href='https://www.linkedin.com/in/parker-nelson-27a819241/' target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} className='linked-in' />
+            </a>
+            <a href='https://twitter.com/parkernelsondev' target="_blank">
+              <FontAwesomeIcon icon={faSquareTwitter} className='twitter' />
+            </a>
+            <a href='https://github.com/pknelson01' target="_blank">
+              <FontAwesomeIcon icon={faSquareGithub} className='github' />
+            </a>
           </div>
         </div>
       </div>

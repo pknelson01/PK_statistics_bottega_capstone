@@ -3,6 +3,10 @@ body {
   color: $offWhite;
   padding: 0;
   margin: 0;
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .nav-wrapper {
@@ -17,6 +21,13 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    .nav-link-wrapper {
+
+      .nav-link-active {
+        color: $blue;
+      }
+    }
 
     a {
       text-decoration: none;

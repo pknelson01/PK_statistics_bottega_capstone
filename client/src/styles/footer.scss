@@ -1,31 +1,42 @@
-.spacer100 {
-  height: 150px;
-}
-
 .footer-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 120px;
+  margin-top: auto;
+  background-color: $blue;
+  color: $black;
+  box-shadow: 1px 18px 64px -12px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 1px 18px 64px -12px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 1px 18px 64px -12px rgba(0, 0, 0, 0.75) inset;
+  // border-top-left-radius: 15px;
+  // border-top-right-radius: 15px;
 
   .top {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 15px;
 
     span {
       font-size: .8em;
     }
 
-    .portfolio-icon {
-      margin: 7px 0 7px 0;
-      font-size: 1.4em;
-      transition: .5s ease-in-out;
 
-      &:hover {
-        color: $blue;
+    .portfolio-icon {
+
+      .user {
+        margin: 7px 0 7px 0;
+        font-size: 1.4em;
+        transition: .5s ease-in-out;
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+          color: $blue;
+        }
       }
     }
   }
@@ -35,6 +46,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 
     span {
       font-size: .8em;
@@ -46,6 +58,8 @@
         margin: 7px 5px 0px 5px;
         font-size: 1.2em;
         transition: .5s ease-in-out;
+        text-decoration: none;
+        color: $black;
 
         &:hover {
           color: $blue;
@@ -56,6 +70,8 @@
         margin: 7px 5px 0px 5px;
         font-size: 1.2em;
         transition: .5s ease-in-out;
+        text-decoration: none;
+        color: $black;
 
         &:hover {
           color: $blue;
@@ -66,6 +82,8 @@
         margin: 7px 5px 0px 5px;
         font-size: 1.2em;
         transition: .5s ease-in-out;
+        text-decoration: none;
+        color: $black;
 
         &:hover {
           color: $blue;

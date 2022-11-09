@@ -106,7 +106,7 @@ export default class SoccerStats extends Component {
       <div style={{ "color": "white" }}>
         {this.state.soccerStats.map((soccer_stat, index) => {
           return (
-            <div className='StatsPage' key={index}>
+            <div className='StatsComponent' key={index}>
               <div className='Stats'>
                 <span>{soccer_stat.date_of_game}</span>
                 <span>{soccer_stat.minutes}</span>
@@ -117,7 +117,7 @@ export default class SoccerStats extends Component {
                 <span>{soccer_stat.goals_allowed}</span>
                 <span>{soccer_stat.yellow_cards}</span>
                 <span>{soccer_stat.red_cards}</span>
-                <button className='deleteButton' onClick={() => this.basketBallStatDeletion(soccer_stat)}
+                <button className='deleteButton' onClick={() => this.soccerStatDeletion(soccer_stat)}
                 >
                   <FontAwesomeIcon icon="square-minus" />
                 </button>

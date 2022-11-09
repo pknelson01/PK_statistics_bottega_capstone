@@ -107,7 +107,7 @@ export default class BasketballStats extends Component {
       <div style={{ "color": "white" }}>
         {this.state.basketballStats.map((basketball_stat, index) => {
           return (
-            <div className='StatsPage' key={index}>
+            <div className='StatsComponent' key={index}>
               <div className='Stats'>
                 <span>{basketball_stat.date_of_game}</span>
                 <span>{basketball_stat.minutes}</span>

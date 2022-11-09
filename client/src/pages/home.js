@@ -10,6 +10,8 @@ import SoccerTwo from '../images/media-scroller-images/soccerTwo.JPG';
 import SoccerThree from '../images/media-scroller-images/soccerThree.JPG';
 import Field from '../images/hero-section-background.jpeg';
 
+import Footer from '../components/footer'
+
 export default class Home extends Component {
   constructor(props) {
     super(props)
@@ -71,6 +73,8 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
+
+        {/* <Footer /> */}
       </div>
     );
   }

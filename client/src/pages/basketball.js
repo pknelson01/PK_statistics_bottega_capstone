@@ -13,7 +13,7 @@ export default class BasketBall extends Component {
 
   render() {
     return (
-      <div>
+      <div className='statsPage'>
         <div className='statValuesHeader'>
           <div className='statValues'>
             <span>Date</span>
@@ -31,8 +31,9 @@ export default class BasketBall extends Component {
 
         {/* Look into adding in a footer links to socials and portfolio */}
 
-        {/* <div className='spacer100'></div>
-        <Footer /> */}
+        <Footer style={{
+
+        }} />
       </div >
     );
   }

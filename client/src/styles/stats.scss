@@ -1,4 +1,4 @@
-.StatsPage {
+.StatsComponent {
   display: grid;
   justify-content: center;
 
@@ -28,33 +28,39 @@
   }
 }
 
-.statValuesHeader {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.statsPage {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 150px);
 
-  .statValues {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .5fr;
+  .statValuesHeader {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 80vw;
+    text-align: center;
 
-    span {
-      font-size: 1.2em;
+    .statValues {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .5fr;
+      align-items: center;
+      width: 80vw;
+
+      span {
+        font-size: 1.2em;
+      }
     }
   }
-}
 
-.deleteButton {
-  text-decoration: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  font-size: 1.5em;
-  color: $babyBlue;
-  transition: .5s ease-in-out;
+  .deleteButton {
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 1.5em;
+    color: $babyBlue;
+    transition: .5s ease-in-out;
 
-  &:hover {
-    color: rgb(208, 0, 0);
+    &:hover {
+      color: rgb(208, 0, 0);
+    }
   }
 }

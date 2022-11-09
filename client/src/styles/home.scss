@@ -1,5 +1,7 @@
 .home-page {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  // min-height: 100vh;
 }
 
 .hero-section {
@@ -24,35 +26,6 @@
   }
 }
 
-// .home-page {
-//   height: auto;
-// }
-
-// .hero-section {
-//   display: grid;
-//   grid-template-columns: 1fr 2fr;
-//   align-items: center;
-//   padding: 20px 30px 80px 30px;
-
-//   .text {
-//     text-align: center;
-
-//     h1 {
-//       font-size: 3em;
-//     }
-
-//     h3 {
-//       font-size: 1.5em;
-//     }
-//   }
-
-//   .image {
-//     display: flex;
-//     justify-content: flex-end;
-
-
-//     img {
-//       border-radius: 5px;
-//     }
-//   }
-// }
+.vertical-scroll::-webkit-scrollbar {
+  display: none;
+}

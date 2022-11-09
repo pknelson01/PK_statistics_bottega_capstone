@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SoccerStats from '../components/soccer-stats';
+import Footer from '../components/footer';
 
 export default class Soccer extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export default class Soccer extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='statsPage'>
         <div className='statValuesHeader'>
           <div className='statValues'>
             <span>Date</span>
@@ -23,6 +24,8 @@ export default class Soccer extends Component {
 
           <SoccerStats />
         </div>
+
+        <Footer />
       </div >
     );
   }
