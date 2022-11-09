@@ -1,0 +1,78 @@
+.spacer100 {
+  height: 150px;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: .8em;
+    }
+
+    .portfolio-icon {
+      margin: 7px 0 7px 0;
+      font-size: 1.4em;
+      transition: .5s ease-in-out;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: .8em;
+    }
+
+    .socials {
+
+      .twitter {
+        margin: 7px 5px 0px 5px;
+        font-size: 1.2em;
+        transition: .5s ease-in-out;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      .linked-in {
+        margin: 7px 5px 0px 5px;
+        font-size: 1.2em;
+        transition: .5s ease-in-out;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      .github {
+        margin: 7px 5px 0px 5px;
+        font-size: 1.2em;
+        transition: .5s ease-in-out;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,23 @@
+@mixin boxShadowEven {
+  box-shadow: 0px 0px 35px 17px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 0px 0px 35px 17px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px 0px 35px 17px rgba(0, 0, 0, 0.64);
+}
+
+@mixin boxShadowTop {
+  box-shadow: 0px -8px 19px 6px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 0px -8px 19px 6px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px -8px 19px 6px rgba(0, 0, 0, 0.64);
+}
+
+@mixin boxShadowBottom {
+  box-shadow: 0px 14px 19px 6px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 0px 14px 19px 6px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 0px 14px 19px 6px rgba(0, 0, 0, 0.64);
+}
+
+@mixin boxShadowInset {
+  box-shadow: 0px 0px 35px 17px rgba(0, 0, 0, 0.64) inset;
+  -webkit-box-shadow: 0px 0px 35px 17px rgba(0, 0, 0, 0.64) inset;
+  -moz-box-shadow: 0px 0px 35px 17px rgba(0, 0, 0, 0.64) inset;
+}

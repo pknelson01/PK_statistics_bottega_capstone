@@ -7,11 +7,10 @@ import {
 
 import {
   faSquareMinus,
-  faSquareCheck
+  faSquareCheck,
+  faUserTie
 } from "@fortawesome/free-solid-svg-icons";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
-
 
 import NavigationContainer from './navigation/navigation-container';
 import Home from './pages/home';
@@ -19,7 +18,7 @@ import BasketBall from './pages/basketball';
 import Soccer from './pages/soccer';
 import FootBall from './pages/football';
 
-library.add(faSquareMinus, faSquareCheck)
+library.add(faSquareMinus, faSquareCheck, faUserTie)
 
 
 export default class App extends Component {

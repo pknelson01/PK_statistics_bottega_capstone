@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SoccerStats from '../components/soccer-stats';
-import SoccerForm from '../forms/soccer-form'
 
 export default class Soccer extends Component {
   constructor(props) {

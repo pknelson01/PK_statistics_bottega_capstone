@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BasketballStats from '../components/basketball-stats';
-import BasketballForm from '../forms/basketball-form';
+import Footer from '../components/footer';
 
 export default class BasketBall extends Component {
   constructor(props) {
@@ -29,7 +29,10 @@ export default class BasketBall extends Component {
           <BasketballStats />
         </div>
 
-        {/* <BasketballForm /> */}
+        {/* Look into adding in a footer links to socials and portfolio */}
+
+        {/* <div className='spacer100'></div>
+        <Footer /> */}
       </div >
     );
   }
