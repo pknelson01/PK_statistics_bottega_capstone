@@ -88,7 +88,7 @@ export default class FootballStats extends Component {
 
   getFootballStat() {
     axios.get("https://pk-statistics.herokuapp.com/api/football_stats")
-    axios.get("http://localhost:5000/api/football_stats")
+      // axios.get("http://localhost:5000/api/football_stats")
       .then(response => {
         this.setState({
           footballStats: response.data
