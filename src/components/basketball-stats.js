@@ -21,7 +21,7 @@ export default class BasketballStats extends Component {
       turn_overs: "",
       fouls: "",
       minutes: "",
-      url: "https://pk-statistics.herokuapp.com/api/basketball_stat",
+      url: "https://pk-statistics-backend.herokuapp.com/api/basketball_stat",
       // url: "http://localhost:5000/api/basketball_stat",
       action: "POST",
       basketballStats: []
@@ -60,7 +60,7 @@ export default class BasketballStats extends Component {
           turn_overs: "",
           fouls: "",
           minutes: "",
-          url: "https://pk-statistics.herokuapp.com/api/basketball_stat",
+          url: "https://pk-statistics-backend.herokuapp.com/api/basketball_stat",
           // url: "http://localhost:5000/api/basketball_stat",
           action: "POST"
         });
@@ -76,7 +76,7 @@ export default class BasketballStats extends Component {
 
 
   basketBallStatDeletion(basketball_stat) {
-    axios.delete(`https://pk-statistics.herokuapp.com/api/basketball_stat/${basketball_stat.id}`)
+    axios.delete(`https://pk-statistics-backend.herokuapp.com/api/basketball_stat/${basketball_stat.id}`)
       // axios.delete(`http://localhost:5000/api/basketball_stat/${basketball_stat.id}`)
       .then(response => {
         console.log('stat deleted: ', response)
@@ -88,7 +88,7 @@ export default class BasketballStats extends Component {
   }
 
   getBasketballStat() {
-    axios.get("https://pk-statistics.herokuapp.com/api/basketball_stats")
+    axios.get("https://pk-statistics-backend.herokuapp.com/api/basketball_stats")
       // axios.get("http://localhost:5000/api/basketball_stats")
       .then(response => {
         this.setState({

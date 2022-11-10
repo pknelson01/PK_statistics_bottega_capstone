@@ -23,7 +23,7 @@ export default class SoccerStats extends Component {
       goals_allowed: "",
       yellow_cards: "",
       red_cards: "",
-      url: "https://pk-statistics.herokuapp.com/api/soccer_stat",
+      url: "https://pk-statistics-backend.herokuapp.com/api/soccer_stat",
       // url: "http://localhost:5000/api/soccer_stat",
       action: "post",
       soccerStats: []
@@ -38,7 +38,7 @@ export default class SoccerStats extends Component {
   }
 
   handleSubmit(event) {
-    axios.post("https://pk-statistics.herokuapp.com/api/soccer_stat",
+    axios.post("https://pk-statistics-backend.herokuapp.com/api/soccer_stat",
       // axios.post("http://localhost:5000/api/soccer_stat",
       {
         date_of_game: this.state.date_of_game,
@@ -62,7 +62,7 @@ export default class SoccerStats extends Component {
           goals_allowed: "",
           yellow_cards: "",
           red_cards: "",
-          url: "https://pk-statistics.herokuapp.com/api/soccer_stat",
+          url: "https://pk-statistics-backend.herokuapp.com/api/soccer_stat",
           // url: "http://localhost:5000/api/soccer_stat",
           action: "post"
         });
@@ -76,7 +76,7 @@ export default class SoccerStats extends Component {
 
 
   soccerStatDeletion(soccer_stat) {
-    axios.delete(`https://pk-statistics.herokuapp.com/api/soccer_stat/${soccer_stat.id}`)
+    axios.delete(`https://pk-statistics-backend.herokuapp.com/api/soccer_stat/${soccer_stat.id}`)
       // axios.delete(`http://localhost:5000/api/soccer_stat/${soccer_stat.id}`)
       .then(response => {
         console.log('stat deleted: ', response)
@@ -89,7 +89,7 @@ export default class SoccerStats extends Component {
 
 
   getSoccerStat() {
-    axios.get("https://pk-statistics.herokuapp.com/api/soccer_stats")
+    axios.get("https://pk-statistics-backend.herokuapp.com/api/soccer_stats")
       // axios.get("http://localhost:5000/api/soccer_stats")
       .then(response => {
         this.setState({
