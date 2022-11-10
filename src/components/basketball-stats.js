@@ -21,6 +21,7 @@ export default class BasketballStats extends Component {
       turn_overs: "",
       fouls: "",
       minutes: "",
+      // below is the new link
       url: "https://pk-statistics-backend.herokuapp.com/api/basketball_stat",
       // url: "http://localhost:5000/api/basketball_stat",
       action: "POST",
