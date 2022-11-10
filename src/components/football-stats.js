@@ -22,7 +22,8 @@ export default class FootballStats extends Component {
       sacks: "",
       interceptions: "",
       passing_yards: "",
-      url: "http://localhost:5000/api/football_stat",
+      url: "https://pk-statistics.herokuapp.com/api/football_stat",
+      // url: "http://localhost:5000/api/football_stat",
       action: "POST",
       footballStats: []
     }
@@ -36,7 +37,8 @@ export default class FootballStats extends Component {
   }
   handleSubmit(event) {
     axios.post(
-      "http://localhost:5000/api/football_stat",
+      "https://pk-statistics.herokuapp.com/api/football_stat",
+      // "http://localhost:5000/api/football_stat",
       {
         date_of_game: this.state.date_of_game,
         touchdowns: this.state.touchdowns,
@@ -59,7 +61,8 @@ export default class FootballStats extends Component {
           sacks: "",
           interceptions: "",
           passing_yards: "",
-          url: "http://localhost:5000/api/football_stat",
+          url: "https://pk-statistics.herokuapp.com/api/football_stat",
+          // url: "http://localhost:5000/api/football_stat",
           action: "POST"
         });
         this.getFootballStat();
@@ -72,7 +75,8 @@ export default class FootballStats extends Component {
 
 
   FootBallStatDeletion(football_stat) {
-    axios.delete(`http://localhost:5000/api/football_stat/${football_stat.id}`)
+    axios.delete(`https://pk-statistics.herokuapp.com/api/football_stat/${football_stat.id}`)
+      // axios.delete(`http://localhost:5000/api/football_stat/${football_stat.id}`)
       .then(response => {
         console.log('stat deleted: ', response)
         this.getFootballStat();
@@ -83,6 +87,7 @@ export default class FootballStats extends Component {
   }
 
   getFootballStat() {
+    axios.get("https://pk-statistics.herokuapp.com/api/football_stats")
     axios.get("http://localhost:5000/api/football_stats")
       .then(response => {
         this.setState({
