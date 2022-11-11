@@ -21,7 +21,6 @@ export default class BasketballStats extends Component {
       turn_overs: "",
       fouls: "",
       minutes: "",
-      // below is the new link
       url: "https://pk-statistics-backend.herokuapp.com/api/basketball_stat",
       // url: "http://localhost:5000/api/basketball_stat",
       action: "POST",
@@ -89,7 +88,13 @@ export default class BasketballStats extends Component {
   }
 
   getBasketballStat() {
-    axios.get("https://pk-statistics-backend.herokuapp.com/api/basketball_stats")
+    axios.get("https://pk-statistics-backend.herokuapp.com/api/basketball_stats", {
+      headers: {
+        crossDomain: true,
+        contentType: "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       // axios.get("http://localhost:5000/api/basketball_stats")
       .then(response => {
         this.setState({
