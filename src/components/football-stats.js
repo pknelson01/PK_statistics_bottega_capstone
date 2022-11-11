@@ -87,13 +87,7 @@ export default class FootballStats extends Component {
   }
 
   getFootballStat() {
-    axios.get("https://pk-statistics-backend.herokuapp.com/api/football_stats", {
-      headers: {
-        crossDomain: true,
-        contentType: "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    axios.get("https://pk-statistics-backend.herokuapp.com/api/football_stats")
       // axios.get("http://localhost:5000/api/football_stats")
       .then(response => {
         this.setState({

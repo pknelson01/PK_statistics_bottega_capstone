@@ -88,13 +88,7 @@ export default class BasketballStats extends Component {
   }
 
   getBasketballStat() {
-    axios.get("https://pk-statistics-backend.herokuapp.com/api/basketball_stats", {
-      headers: {
-        crossDomain: true,
-        contentType: "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    axios.get("https://pk-statistics-backend.herokuapp.com/api/basketball_stats")
       // axios.get("http://localhost:5000/api/basketball_stats")
       .then(response => {
         this.setState({
