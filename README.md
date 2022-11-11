@@ -1,4 +1,12 @@
 # PK Statistics (*React-App*)
+### Repository urls:
+> Front End: "https://github.com/pknelson01/PK_statistics_capstone_frontend" <br>
+> Back End: "https://github.com/pknelson01/pk_statistics_capstone_backend"
+---
+### Hosting urls:
+> Front End: "https://pk-statistics-frontend.herokuapp.com" <br>
+> Back End: "https://pk-statistics-backend.herokuapp.com"
+---
 ### Technologies:
 - Python
 - React
