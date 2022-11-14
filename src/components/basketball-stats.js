@@ -35,6 +35,7 @@ export default class BasketballStats extends Component {
     });
   }
 
+  // What is use to communicate with the backend when I want to POST and entry
 
   handleSubmit(event) {
     axios.post(this.state.url,
@@ -74,6 +75,7 @@ export default class BasketballStats extends Component {
     event.preventDefault();
   }
 
+  // What is use to communicate with the backend when I want to DELETE and entry
 
   basketBallStatDeletion(basketball_stat) {
     axios.delete(`https://pk-statistics-backend.herokuapp.com/api/basketball_stat/${basketball_stat.id}`)
@@ -86,6 +88,8 @@ export default class BasketballStats extends Component {
         console.log("basketBallStatDeletion error: ", error)
       })
   }
+
+  // What is use to communicate with the backend when I want to GET and entry
 
   getBasketballStat() {
     axios.get("https://pk-statistics-backend.herokuapp.com/api/basketball_stats")
@@ -100,6 +104,8 @@ export default class BasketballStats extends Component {
         console.log("GetBasketballStat error:", error)
       })
   }
+
+  // LifeCycle Method
 
   componentDidMount() {
     this.getBasketballStat()

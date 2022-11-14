@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
@@ -35,6 +36,7 @@ export default class App extends Component {
           <div>
             <NavigationContainer />
             <Switch>
+              {/* Routes */}
               <Route exact path="/" component={Home} />
               <Route path="/basketball" component={BasketBall} />
               <Route path="/soccer" component={Soccer} />

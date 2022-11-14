@@ -12,7 +12,6 @@ export default class SoccerStats extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
-
     this.state = {
       date_of_game: "",
       minutes: "",
@@ -36,6 +35,8 @@ export default class SoccerStats extends Component {
       errorText: ""
     });
   }
+
+  // What is use to communicate with the backend when I want to POST and entry
 
   handleSubmit(event) {
     axios.post("https://pk-statistics-backend.herokuapp.com/api/soccer_stat",
@@ -74,6 +75,7 @@ export default class SoccerStats extends Component {
     event.preventDefault();
   }
 
+  // What is use to communicate with the backend when I want to DELETE and entry
 
   soccerStatDeletion(soccer_stat) {
     axios.delete(`https://pk-statistics-backend.herokuapp.com/api/soccer_stat/${soccer_stat.id}`)
@@ -87,6 +89,7 @@ export default class SoccerStats extends Component {
       })
   }
 
+  // What is use to communicate with the backend when I want to GET and entry
 
   getSoccerStat() {
     axios.get("https://pk-statistics-backend.herokuapp.com/api/soccer_stats")
@@ -101,6 +104,8 @@ export default class SoccerStats extends Component {
         console.log("getSoccerStat error:", error)
       })
   }
+
+  // LifeCycle Method
 
   componentDidMount() {
     this.getSoccerStat()
